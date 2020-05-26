@@ -35,7 +35,7 @@ class CLI
       # I need to access my species list
       # print each species out in an alphabetical and readable format (should my readable format be [a-j], [j-m], etc?and then...
       puts "Please select a species from the database or enter 'menu' to return to the main menu"
-      puts sorted = change.sort { |a, b| a <=> b } = alphabetical sort
+      puts sorted = change.sort { |a, b| a <=> b } # =alphabetical sort
       sleep(2)
       if user_input == "#{species_name}"  # <== might need to change that depending on accessor
         # enter the correct path for individual species information
