@@ -22,12 +22,12 @@ class CLI
       ask_user_for_species_choice # do I need this here at all?
       sleep(2)
       menu
-    else user_input == "attribute"
+    elsif user_input == "attribute"
       display_list_of_attributes
       ask_user_for_attribute_choice  # do I need this here at all?
       sleep(2)
       menu
-    elsif
+    else
       puts "You have not entered a valid command. Please restate your command."
     end
 
@@ -40,9 +40,9 @@ class CLI
       if user_input == "#{species_name}"  # <== might need to change that depending on accessor
         # enter the correct path for individual species information
         display_attributes_by_species
-      else user_input == "menu"
+      elsif user_input == "menu"
       menu
-      elsif
+      else
         puts "You have not entered a valid command. Please restate your command."
       end
 
@@ -54,9 +54,9 @@ class CLI
       puts "Please select an attribute from the database or enter 'menu' to return to the main menu"
       if user_input == "#{attribute_name}"  # <== might need to change that depending on accessor
         # enter the correct path for species that fall under that attribute
-      else user_input == "menu"
+      elsif user_input == "menu"
       menu
-      elsif
+      else
         puts "You have not entered a valid command. Please restate your command."
     end
 
@@ -70,7 +70,7 @@ class CLI
       # BONUS: I want the user to be able to select a species from this list to "learn more about" which returns 
         # display_attributes_by_species with the scraped MemoryAlpha information
     end
-    
+
 
 
 end
