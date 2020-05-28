@@ -1,8 +1,8 @@
 
 class API
-  # make calls to our API
+  # make calls to our API 
   # what I write will guide my 
-  # attributes an will be used as
+  # properties an will be used as
   # attr_accessors in anatomical class
 
   def self.search_index(searchValue)
@@ -19,35 +19,35 @@ class API
     array_of_properties.each do |properties_hash|
       property_instance = Property.new
                 
-     binding.pry
+    end
   end
 
    
-  # def self.buildarray_of_(attributes_hash)
-  #   attributes = array.new(12) #limit number of loops to seach the attributes list
-  #   attributes.length.times do |i|
+  # def self.buildarray_of_(properties_hash)
+  #   properties = array.new(12) #limit number of loops to seach the properties list
+  #   properties.length.times do |i|
   #     if species_hash["extinctSpecies" + i.to_s] != false
-  #         attributes[i] = species_hash["extinctSpecies" + i.to_s]
+  #         properties[i] = species_hash["extinctSpecies" + i.to_s]
   #       species_hash["warpCapableSpecies" + i.to_s] != false
-  #         attributes[i] = species_hash["warpCapableSpecies" + i.to_s]
+  #         properties[i] = species_hash["warpCapableSpecies" + i.to_s]
   #       species_hash["extraGalacticSpecies" + i.to_s] != false
-  #         attributes[i] = species_hash["extraGalacticSpecies" + i.to_s]
+  #         properties[i] = species_hash["extraGalacticSpecies" + i.to_s]
   #       species_hash["humanoidSpecies" + i.to_s] != false
-  #         attributes[i] = species_hash["humanoidSpecies" + i.to_s]
+  #         properties[i] = species_hash["humanoidSpecies" + i.to_s]
   #       species_hash["reptilianSpecies" + i.to_s] != false
-  #         attributes[i] = species_hash["reptilianSpecies" + i.to_s]
+  #         properties[i] = species_hash["reptilianSpecies" + i.to_s]
   #         species_hash["nonCorporealSpecies" + i.to_s] != false
-  #         attributes[i] = species_hash["nonCorporealSpecies" + i.to_s]
+  #         properties[i] = species_hash["nonCorporealSpecies" + i.to_s]
   #       species_hash["shapeshiftingSpecies" + i.to_s] != false
-  #         attributes[i] = species_hash["shapeshiftingSpecies" + i.to_s]
+  #         properties[i] = species_hash["shapeshiftingSpecies" + i.to_s]
   #       species_hash["spaceborneSpecies" + i.to_s] != false
-  #         attributes[i] = species_hash["spaceborneSpecies" + i.to_s]
+  #         properties[i] = species_hash["spaceborneSpecies" + i.to_s]
   #       species_hash["telepathicSpecies" + i.to_s] != false
-  #         attributes[i] = species_hash["telepathicSpecies" + i.to_s]
+  #         properties[i] = species_hash["telepathicSpecies" + i.to_s]
   #       species_hash["transDimensionalSpecies" + i.to_s] != false
-  #         attributes[i] = species_hash["transDimensionalSpecies" + i.to_s]
+  #         properties[i] = species_hash["transDimensionalSpecies" + i.to_s]
   #       species_hash["alternateReality" + i.to_s] != false
-  #         attributes[i] = species_hash["alternateReality" + i.to_s]
+  #         properties[i] = species_hash["alternateReality" + i.to_s]
   #     end
   #   end
   # end
