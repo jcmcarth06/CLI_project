@@ -1,5 +1,16 @@
 class API 
-  
+
+  def self.build_properties_array(species_hash) #building a hash of 
+    properties = Species.new(12)
+    properties.length.times do |i|
+      if species_hash["warpCapableSpecies" + i.to_s] != false  #adding only the true values per loop
+        property[i] = species_hash["warpCapableSpecies" + i.to_s] #use shovel method instead? 
+                          #do I need to do this ^^ for each property instance?
+      end
+    end
+    return properties #return the list of true values after all 12 loops are complete
+  end
+
   def self.search_index
     url = 'http://stapi.co/api/v1/rest/species/search'
     uri = URI(url)
@@ -23,14 +34,12 @@ class API
       species_instance.spaceborneSpecies = species_hash["spaceborneSpecies"]
       species_instance.telepathicSpecies = species_hash["telepathicSpecies"]
       species_instance.transDimensionalSpecies = species_hash["transDimensionalSpecies"]
-      species_instance.unnamedSpecies = species_hash["unnamedSpecies"]
       species_instance.alternateReality = species_hash["alternateReality"]
     end
   end
-  def self.searchSpecies(input)
-    return Species.all.select {|s| s.name.downcase.include? input.downcase}
+
+  def self.searchSpecies(input)  #this is how the user will interact with the program, allowing the input to be lowercase
+    return Species.all.select {|s| s.name.downcase.start_with? input.downcase}
   end
-  def self.displaySpecies(arr)
-    arr.each { |x| puts "warpCapableSpecies? #{x.warpCapableSpecies}" }
-  end
+
 end

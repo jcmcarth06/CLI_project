@@ -15,7 +15,7 @@ class CLI
 
   def logo
     puts " 
-     ________.--------------.________
+    ________.--------------.________
     |  ||__| [_]|                    |
     |  |     [_]|                    |
     |__|_____[_]|____________________|
@@ -56,7 +56,7 @@ class CLI
        
        
        
-       "
+      "
 
 
   end
@@ -71,22 +71,7 @@ class CLI
     API.displaySpecies(arr)
   end
 
-    def display_list_of_species
-      # I need to access my species list
-      # print each species out in an alphabetical and readable format (should my readable format be [a-j], [j-m], etc?and then...
-      puts "Please select a species from the database or enter 'menu' to return to the main menu"
-      species.all.each.with_index(1) do |species, index|# call on the species API
-        puts "#{index}. #{species}"
-      puts sorted = change.sort { |a, b| a <=> b } # =alphabetical sort
-      sleep(2)
-      if user_input == "#{species_name}"  # <== might need to change that depending on accessor
-        # enter the correct path for individual species information
-        display_properties_by_species
-      elsif user_input == "menu"
-      menu
-      else
-        puts "You have not entered a valid command. Please restate your command."
-      end
+    
 
     end
 
@@ -102,18 +87,6 @@ class CLI
         puts "You have not entered a valid command. Please restate your command."
       end
     end
-
-    def display_properties_by_species
-      # i want all the properties that return "true" on the API to return here as a string in the form of a list
-      # BONUS: I want to scrape the MemoryAlpha wiki physiology sections and return that information
-    end
-
-    def display_species_by_property
-      # i want to return every species that lists the selected property as "true" on the API
-      # BONUS: I want the user to be able to select a species from this list to "learn more about" which returns 
-        # display_properties_by_species with the scraped MemoryAlpha information
-    end
-  end
 
 
 end

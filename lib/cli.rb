@@ -57,63 +57,21 @@ class CLI
        
        
        "
-
-
   end
   
 
   def menu
-    puts "Would you like to search the database by species name or by individual attributes?" #do I want to have a visual menu here?
-                                                                                             # also include a link to "trivia of the day?"
-    puts "Please enter 'name' or 'attribute' to proceed."
+    puts "\nPlease enter a letter to display a list of corresponding species whose name begins with that letter."
     user_input = gets.strip.downcase
     arr = API.searchSpecies(user_input)
-    API.displaySpecies(arr)
+    arr.each_with_index { |x, idx| puts "#{idx + 1}. #{x.name}"}
+    self.ask_user_for_species_input(arr)
   end
 
-    def display_list_of_species
-      # I need to access my species list
-      # print each species out in an alphabetical and readable format (should my readable format be [a-j], [j-m], etc?and then...
-      puts "Please select a species from the database or enter 'menu' to return to the main menu"
-      species.all.each.with_index(1) do |species, index|# call on the species API
-        puts "#{index}. #{species}"
-      puts sorted = change.sort { |a, b| a <=> b } # =alphabetical sort
-      sleep(2)
-      if user_input == "#{species_name}"  # <== might need to change that depending on accessor
-        # enter the correct path for individual species information
-        display_properties_by_species
-      elsif user_input == "menu"
-      menu
-      else
-        puts "You have not entered a valid command. Please restate your command."
-      end
-
-    end
-
-    def display_list_of_properties
-      # I need to access my properties list
-      # print each property out in an alphabetical and readable format and then...
-      puts "Please select an property from the database or enter 'menu' to return to the main menu"
-      if user_input == "#{property_name}"  # <== might need to change that depending on accessor
-        # enter the correct path for species that fall under that property
-      elsif user_input == "menu"
-      menu
-      else
-        puts "You have not entered a valid command. Please restate your command."
-      end
-    end
-
-    def display_properties_by_species
-      # i want all the properties that return "true" on the API to return here as a string in the form of a list
-      # BONUS: I want to scrape the MemoryAlpha wiki physiology sections and return that information
-    end
-
-    def display_species_by_property
-      # i want to return every species that lists the selected property as "true" on the API
-      # BONUS: I want the user to be able to select a species from this list to "learn more about" which returns 
-        # display_properties_by_species with the scraped MemoryAlpha information
-    end
+  def ask_user_for_species_input(list_by_letter)
+    puts "\nPlease select an index number from the list to learn more about the species."
+    index = gets.strip.to_i - 1
+    species_data = list_by_letter[index].name
   end
-
 
 end
