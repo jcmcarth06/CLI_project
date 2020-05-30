@@ -9,7 +9,7 @@ class CLI
   end
 
   def menu
-    puts "Enter '1' to search the alphabetical database or '2' to search by quadrant.\n"
+    puts "\nEnter '1' to search the alphabetical database or '2' to search by quadrant.\n"
     user_input = gets.strip.downcase
     if user_input == "1" 
       self.letter_menu
@@ -22,11 +22,11 @@ class CLI
   end
 
   def quadrant_menu
-    puts "Please select a quadrant index number:
-        1. Alpha
-        2. Beta
-        3. Gamma
-        4. Delta"
+    puts "\nPlease select a quadrant index number:
+    1. Alpha
+    2. Beta
+    3. Gamma
+    4. Delta"
     user_input = gets.strip.downcase
     selection = ""
     if user_input == "1"
@@ -60,6 +60,7 @@ class CLI
       puts "\nThere no species in the index for the letter you entered. Please provide a valid entry."
       self.letter_menu
     end
+    puts
     arr.each_with_index { |x, idx| puts "#{idx + 1}. #{x.name}"}
     self.ask_user_for_species_input(arr)
   end
@@ -68,7 +69,7 @@ class CLI
     puts "\nPlease select an index number from the list to learn more about the species."
     index = gets.strip.to_i - 1
     species_data = list_by_letter[index]
-    puts "Name: #{species_data.name}\n
+    puts "\nName: #{species_data.name}\n
       Homeworld: #{species_data.homeworld["name"]}\n
       Quadrant: #{species_data.quadrant["name"]}\n
           Extinct: #{species_data.extinctSpecies}
@@ -90,6 +91,9 @@ class CLI
     user_input = gets.strip.downcase
     if user_input == "menu"
       self.menu
+    else 
+      puts "The command you entered is not valid. Please input a valid entry."
+      self.return_to_menu
     end
   end
 
