@@ -31,7 +31,7 @@ class API
     end
   end
 
-  def self.searchSpecies(input)  #this is how the user will interact with the program, allowing the input to be lowercase
+  def self.searchSpecies(input)
     return Species.all.select {|s| s.name.downcase.start_with? input.downcase}
   end
 
