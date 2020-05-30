@@ -1,33 +1,13 @@
 require 'pry'
 class CLI
   def start
-    logo 
+    Logo.logo 
     puts "Welcome to the Star Trek Species Index
-    "
+    " 
     API.search_index
     self.menu
   end
 
-  def logo
-    puts " 
-               .
-              .:.
-             .:::.
-            .:::::.
-        ***.:::::::.***
-   *******.:::::::::.*******
- ********.:::::::::::.********
-********.:::::::::::::.********
-*******.::::::'***`::::.*******
-******.::::'*********`::.******
- ****.:::'*************`:.****
-   *.::'*****************`.*
-   .:'  ***************    .
-  .
-
-       "
-  end
-  
   def menu
     puts "Enter '1' to search the alphabetical database or '2' to search by quadrant.\n"
     user_input = gets.strip.downcase
