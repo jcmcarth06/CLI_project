@@ -1,10 +1,7 @@
-Hello World!!!!!!
 
 # CLIProject
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/CLI_project`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to the Star Trek Species Index. You can use this application to access information about the various species in the Star Trek universe. You will be able to search by name or quadrant and learn about each species' various attributes, such as homeworld, home quadrant, and a number of physical attributes.
 
 ## Installation
 
@@ -24,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+To run this program, the user will enter ruby bin/start into the terminal. Thee user will be welcomed to the program and then prompted to search either the alphabetical database or the quadrant database. Through the alphabetical database, the user can search by the first letter of the species' names. From there, the user can select an index number to view specific information about that species. A prompt to return to the main menu will return. From the main menu, the user can choose the second search option and access the database by quadrant. From there they can select an index number and be prvided with a list of species that is present in the selected quadrant. From there, as before, the use canr select an index number to learn more about the species they choose. 
 
 ## Development
 
