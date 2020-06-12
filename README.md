@@ -5,19 +5,7 @@ Welcome to the Star Trek Species Index. You can use this application to access i
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'CLI_project'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install CLI_project
+To install this program, clone the repository from https://github.com/jcmcarth06/CLI_project, then run 'bundle install' in the terminal.
 
 ## Usage
 
