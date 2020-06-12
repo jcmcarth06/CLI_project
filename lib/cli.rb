@@ -51,7 +51,6 @@ class CLI
     self.ask_user_for_species_input(arr)
   end
   
-
   def letter_menu
     puts "\nPlease enter a letter to display a list of corresponding species whose name begins with that letter."
     user_input = gets.strip.downcase
